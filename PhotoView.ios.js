@@ -2,9 +2,10 @@ import React, {Component} from 'react';
 import {
     View,
     ScrollView,
-    Image,
     TouchableWithoutFeedback
 } from 'react-native';
+import ProgressCircle from 'react-native-progress/Circle';
+import Image from 'react-native-image-progress';
 
 export default class PhotoView extends Component {
     render() {
@@ -21,7 +22,7 @@ export default class PhotoView extends Component {
                 <TouchableWithoutFeedback
                     onPress={this.props.onTap ? this.props.onTap : function() {}}>
 
-                    <Image {...this.props}/>
+                    <Image indicator={ProgressCircle} indicatorProps={{color: 'gray'}} {...this.props}/>
 
                 </TouchableWithoutFeedback>
 
